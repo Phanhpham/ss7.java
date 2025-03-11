@@ -14,13 +14,12 @@ public class Bai5 {
         // Tách câu thành các từ
         String[] words = inputString.split(" ");
 
-        // Tạo StringBuilder
+        // Tạo StringBuilder để lưu kết quả
         StringBuilder result = new StringBuilder();
 
-        // Đảo ngược từng từ và nối lại thành câu mới
-        for (String word : words) {
-            StringBuilder sb = new StringBuilder(word);
-            result.append(sb.reverse().toString()).append(" ");
+        // Đảo ngược thứ tự các từ và nối lại thành câu mới
+        for (int i = words.length - 1; i >= 0; i--) {
+            result.append(words[i]).append(" ");
         }
 
         // In ra câu mới

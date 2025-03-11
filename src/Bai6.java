@@ -8,7 +8,7 @@ public class Bai6 {
         long startTime = System.currentTimeMillis();
         String resultString = initialString;
         for (int i = 0; i < iterations; i++) {
-            resultString += appendString;
+            resultString.concat(appendString);
         }
         long endTime = System.currentTimeMillis();
         System.out.println("Thời gian với String: " + (endTime - startTime) + " ms");

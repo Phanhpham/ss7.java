@@ -12,10 +12,10 @@ public class Bai1 {
         System.out.print("Nhập chuỗi thứ ba: ");
         String str3 = scanner.nextLine();
 
-        // Tạo đối tượng StringBuilder và nối các chuỗi lại
+        // Tạo đối tượng StringBuilder và nối các chuỗi lại với dấu cách
         StringBuilder sb = new StringBuilder();
-        sb.append(str1);
-        sb.append(str2);
+        sb.append(str1).append(" ");
+        sb.append(str2).append(" ");
         sb.append(str3);
 
         // Chuyển StringBuilder thành chuỗi và chuyển sang chữ hoa

@@ -4,8 +4,12 @@ public class Bai10 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Khởi tạo StringBuilder để thao tác với chuỗi
-        StringBuilder str = new StringBuilder();
+        // Nhập chuỗi ban đầu
+        System.out.print("Nhập chuỗi ban đầu: ");
+        StringBuilder str = new StringBuilder(scanner.nextLine());
+
+        // Tạo một bản sao của chuỗi gốc để tránh việc thao tác trên chuỗi đã đảo ngược
+        StringBuilder originalStr = new StringBuilder(str);
 
         // Menu cho người dùng lựa chọn
         while (true) {
@@ -18,11 +22,12 @@ public class Bai10 {
             System.out.println("6. Thoát chương trình");
             System.out.print("Chọn chức năng (1-6): ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Đọc bỏ dòng nhập dư
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     // Đảo ngược chuỗi
+                    str = new StringBuilder(originalStr); // Sử dụng lại chuỗi gốc
                     System.out.println("Chuỗi hiện tại: " + str);
                     str.reverse();
                     System.out.println("Chuỗi sau khi đảo ngược: " + str);
@@ -34,6 +39,7 @@ public class Bai10 {
                     System.out.print("Nhập vị trí chèn: ");
                     int insertPos = scanner.nextInt();
                     scanner.nextLine(); // Đọc bỏ dòng nhập dư
+                    str = new StringBuilder(originalStr); // Sử dụng lại chuỗi gốc
                     str.insert(insertPos, insertStr);
                     System.out.println("Chuỗi sau khi chèn: " + str);
                     break;
@@ -44,6 +50,7 @@ public class Bai10 {
                     System.out.print("Nhập vị trí kết thúc xóa: ");
                     int endPos = scanner.nextInt();
                     scanner.nextLine(); // Đọc bỏ dòng nhập dư
+                    str = new StringBuilder(originalStr); // Sử dụng lại chuỗi gốc
                     str.delete(startPos, endPos);
                     System.out.println("Chuỗi sau khi xóa: " + str);
                     break;
@@ -53,6 +60,7 @@ public class Bai10 {
                     String oldStr = scanner.nextLine();
                     System.out.print("Nhập đoạn thay thế: ");
                     String newStr = scanner.nextLine();
+                    str = new StringBuilder(originalStr); // Sử dụng lại chuỗi gốc
                     int startIdx = str.indexOf(oldStr);
                     if (startIdx != -1) {
                         str.replace(startIdx, startIdx + oldStr.length(), newStr);
@@ -66,6 +74,7 @@ public class Bai10 {
                     System.out.print("Chuyển thành (1) chữ hoa, (2) chữ thường: ");
                     int caseChoice = scanner.nextInt();
                     scanner.nextLine(); // Đọc bỏ dòng nhập dư
+                    str = new StringBuilder(originalStr); // Sử dụng lại chuỗi gốc
                     if (caseChoice == 1) {
                         str = new StringBuilder(str.toString().toUpperCase());
                     } else if (caseChoice == 2) {
